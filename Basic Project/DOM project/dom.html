@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM project</title>
+</head>
+<body>
+    <h1> Welcome to my DOM project </h1>
+    <button id="start">start</button>
+    <button id="stop">stop</button>
+
+    <script>
+        let intervalid;
+        document.querySelector('#start').addEventListener('click',function(){
+            intervalid = setInterval(function(){
+                console.log("hello my Friend " );
+            },2000);    
+                    
+        });
+        document.querySelector('#stop').addEventListener('click',function(){
+            clearInterval(intervalid)
+            console.log("stopped");
+        });
+        
+    </script>
+
+</body>
+</html>
