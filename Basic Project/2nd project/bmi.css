@@ -21,7 +21,7 @@ body {
 .container {
     text-align: center;
     width: 500px;
-    height: 400px;
+    height: auto;
     border-radius: 10px;
     background-color: rgb(149, 232, 204);
     border: 2px solid rgba(0, 0, 0, 0.407);
