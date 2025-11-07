@@ -1,6 +1,11 @@
-h1,
-p {
+.text {
     text-align: center;
+    font-family: sans-serif;
+}
+
+.para {
+    text-align: center;
+    font-family: cursive;
 }
 
 .button {
@@ -9,10 +14,9 @@ p {
     width: 20px;
     height: 20px;
     cursor: pointer;
-    display:inline-block;
+    display: inline-block;
     margin: 20px;
     margin-left: 8%;
-
 }
 
 #blue {
@@ -33,4 +37,24 @@ p {
 
 #yellow {
     background-color: yellow;
+}
+
+
+
+@media (max-width: 768px) {
+    .text {
+        font-size: 1rem;
+
+    }
+
+    .para {
+        font-size: 1rem;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
 }
