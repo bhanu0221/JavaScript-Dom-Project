@@ -20,7 +20,7 @@ h1 {
     text-align: center;
 }
 
-.buttons a {
+.buttons .a {
     text-decoration: none;
     color: white;
     background-color: #4CAF50;
@@ -30,7 +30,22 @@ h1 {
     font-size: 18px;
 }
 
-.buttons a:hover {
+.buttons .a:hover {
     background-color: #45a049;
     transform: scale(1.05);
+}
+
+@media screen and (max-width: 600px) {
+    h1{
+        font-family: cursive;
+        font-size: medium;
+    }
+    .buttons{
+        gap: 20px;
+        text-align: center;
+        font-size: medium;
+    }
+    .a{
+        padding: 20px;
+    }
 }

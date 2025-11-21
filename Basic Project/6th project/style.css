@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  background-color: bisque;
+}
+.main {
+  font-family: Arial, sans-serif;
+}
+
+/* parent: form (left) + cards (right) */
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px;
+  gap: 30px;
+}
+
+h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: cursive;
+}
+
+/* --- Form --- */
+form {
+  width: 300px;
+  padding: 30px;
+  border-radius: 10px;
+  background: #c2e2ef;
+}
+
+#title,
+#text {
+  margin: 5px 0;
+  font-size: larger;
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+#date, #category{
+    margin: 5px 0;
+    font-size: large;
+    width: 100%;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+#important{
+    font-size: large;
+    cursor: pointer;
+}
+
+#submit {
+  margin-top: 10px;
+  font-size: large;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  padding: 8px;
+  color: black;
+  background-color: beige;
+}
+
+/* --- Cards Area on Right --- */
+#cardContainer {
+  width: 350px;
+  min-height: 250px;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* individual card */
+.card {
+  background:#ccc;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card h3 {
+  text-align: center;  
+  margin: 0;
+}
+
+.card p {
+  margin: 8px 0 0 0;
+}
+
+.card button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    padding: 10px;
+  }
+
+
+  .content {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  /* form full width on phone */
+  form {
+    width: 80%;
+    padding: 30px;
+    
+  }
+
+  /* cards container full width on phone */
+  #cardContainer {
+    width: 100%;
+    min-height: auto;
+    padding: 5px;
+  }
+
+  /* make button + inputs a bit smaller */
+  #title,
+  #text {
+    font-size: 1rem;
+  }
+
+  #submit {
+    font-size: 1rem;
+  }
+}

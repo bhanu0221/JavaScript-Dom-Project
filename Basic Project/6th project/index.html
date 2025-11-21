@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-List</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main">
+        <h2>To-do-List</h2>
+
+        <!-- FLEX CONTAINER -->
+        <div class="content">
+            <!-- LEFT: FORM -->
+            <form onsubmit="handleSubmit(event)">
+                <input id="title" type="text" placeholder="Enter Title here" />
+                <br>
+                <textarea id="text" placeholder="Enter your thought's"></textarea>
+                <br>
+                <input type="date" id="date" />
+                <br>
+                <select id="category">
+                    <option value="General">General</option>
+                    <option value="Work">Work</option>
+                    <option value="Study">Study</option>
+                    <option value="Personal">Personal</option>
+                    <option value="Shopping">Shopping</option>
+                </select>
+                <br>
+                <label>
+                    <input type="checkbox" id="important"> Mark as Important
+                </label>
+                <br>
+                <input id="submit" type="submit" value="Add" />
+            </form>
+
+            <!-- RIGHT: CARDS -->
+            <div id="cardContainer"></div>
+        </div>
+
+    </div>
+
+    <script>
+        function handleSubmit(e){
+            e.preventDefault();
+
+            const titleValue = document.getElementById("title").value;
+            const textValue = document.getElementById("text").value;
+            const dateValue = document.getElementById("date").value;
+            const categoryValue = document.getElementById("category").value;
+            const importantValue = document.getElementById("important").checked;
+
+            if (!titleValue.trim() || !textValue.trim()) {
+                alert("Please fill title and text fields");
+                return;
+            }
+
+            const card = document.createElement("div");
+            card.className = "card";
+
+            card.innerHTML = `
+                <h3>${importantValue ? "⭐Important " : ""}${titleValue}</h3>
+                <p>${textValue}</p>
+                <p><strong>Date:</strong> ${dateValue || "No date"}</p>
+                <p><strong>Category:</strong> ${categoryValue}</p>
+                <button onclick="this.parentElement.remove()">Delete</button>
+            `;
+
+            document.getElementById("cardContainer").appendChild(card);
+
+            // Clear fields
+            document.getElementById("title").value = "";
+            document.getElementById("text").value = "";
+            document.getElementById("date").value = "";
+            document.getElementById("category").value = "General";
+            document.getElementById("important").checked = false;
+        }
+    </script>
+
+</body>
+</html>
