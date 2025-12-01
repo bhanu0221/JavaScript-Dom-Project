@@ -42,9 +42,15 @@ buttons.forEach(function (button) {
                 body.style.backgroundColor = e.target.id;
             }
         }    
+        if (e.target.id === 'black') {
+            if (body.style.backgroundColor === 'black') {
+                body.style.backgroundColor = '';
+
+            } else {
+                body.style.backgroundColor = e.target.id;
+            }
+        }    
                 
 
     });
 });
-
-
