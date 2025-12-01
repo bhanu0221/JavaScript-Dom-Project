@@ -15,13 +15,59 @@ h3 {
 #choices {
     text-align: center;
 }
-button {
-    border-color: blanchedalmond;
-    background-color: rgb(177, 224, 208);
-    font-size: large;
+img {
+    /* Base Properties */
+    width: 200px;
+    object-fit: cover;
+    opacity: 1; /* Corrected: Must be a unitless value between 0 and 1 */
+    cursor: pointer;
+    transition: transform 0.1s ease, filter 0.1s ease; /* Smooth the effect */
+}
+
+
+img:hover {
+    filter: brightness(1.1); /* Makes it slightly brighter */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds a subtle lift/shadow */
+}
+
+/* 👆 Active State: The "clicked" or "pressed" effect */
+img:active {
+    /* 1. Scale Down: Makes the image shrink slightly, giving a "press" feel */
+    transform: scale(0.95);
+    /* 2. Darken: Makes the image look pressed down */
+    filter: brightness(0.9);
+    /* 3. Shadow Change: Removes the box-shadow to make it look flush */
+    box-shadow: none;
 }
 #result {
     margin-top: 2%;
     text-align: center;
     font-size: large;
+}
+@media (max-width: 768px) {
+
+    body {
+        padding: 10px;
+    }
+
+    h2 {
+        padding-top: 3%;
+        font-size: 1.5em; 
+    }
+
+    #choices {
+        padding: 10px 0;
+    }
+
+    img {
+        width: 120px; 
+        margin: 5px;
+    }
+
+    #result {
+
+        font-size: 16px; font-weight: bold; 
+        display: flex;
+        flex-direction: column;
+    }
 }
