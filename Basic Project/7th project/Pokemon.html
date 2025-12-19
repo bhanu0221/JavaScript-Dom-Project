@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokemon</title>
+    <style>
+      body {
+        background: linear-gradient(100deg, #73deec 0%, #d86bff 100%);
+        min-height: 100vh;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 50px;
+      }
+      .head {
+        font-family: cursive;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .search-box {
+        display: flex;
+        gap: 10px; /* Puts space between input and button */
+        margin-bottom: 20px;
+      }
+      #typing {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+      button {
+        padding: 10px 20px;
+        border-radius: 20px;
+        border: none;
+        background-color: #ffcb05; /* Pokemon Yellow */
+        color: #3b4cca; /* Pokemon Blue */
+        font-weight: bold;
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
+
+      button:hover {
+        transform: scale(1.1);
+      }
+      .pokemon {
+        text-align: center;
+        background: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        border-radius: 15px;
+        backdrop-filter: blur(5px);
+        min-width: 250px;
+      }
+      .pokiName {
+        font-size: larger;
+        color: aliceblue;
+        font-family: "Courier New", Courier, monospace;
+      }
+      .poki {
+        width: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="head">Search your pokemon</h1>
+    <div class="search-box">
+      <input id="typing" type="text" placeholder="Enter pokemon name" />
+      <button onclick="pokemon()">search</button>
+    </div>
+    <div class="pokemon"></div>
+    <script src="pokemon.js"></script>
+  </body>
+</html>
